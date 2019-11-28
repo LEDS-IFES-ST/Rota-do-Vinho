@@ -9,11 +9,12 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link href="css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <!--/.Padrões e Links da Página-->
 
   <!--Titulo da Guia-->
   <title>Vinicola LEDS Santa Teresa</title>
-  <link rel="shortcut icon" href="icons/vinho.ico">
+  <link rel="shortcut icon" href="icons/vinho.ico" >
   <!--/.Titulo da Guia-->
 
   <!--Styles em CSS-->
@@ -26,8 +27,7 @@
 </head>
 
 <body>
- 
-
+  
     <!--NavBar-->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: black">
       <a class="navbar-brand" href="#">
@@ -70,22 +70,62 @@
     <!--Titulo & Slide de Imagens-->
     <div class="background">
       <div class="container">
-        <br>
-        <br>
-        <br>
+      
         <div class="jumbotron">
-          <hr />
-          <!--Google Maps-->
-          <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m46!1m12!1m3!1d30008.046404127417!2d-40.63594116604223!3d-19.924160395850354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m31!3e0!4m5!1s0xb78251561a9f73%3A0xb29068c2415f932a!2sRodovi%C3%A1ria%20-%20Avenida%20Maria%20Ang%C3%A9lia%20Vervloet%2C%20Santa%20Teresa%20-%20ES!3m2!1d-19.9305895!2d-40.599175599999995!4m5!1s0xb7826811457997%3A0x5bfb02f8a0f5b2b8!2sCantina%20Mattiello%20-%20Rua%20S%C3%A3o%20Louren%C3%A7o%20-%20S%C3%A3o%20Louren%C3%A7o%2C%20Santa%20Teresa%20-%20ES!3m2!1d-19.931572!2d-40.615277999999996!4m5!1s0xb7789f67d16e9f%3A0x8746821e2d1b77a3!2sVin%C3%ADcola%20Tomazelli%20-%20ES-261%2C%20Santa%20Teresa%20-%20ES!3m2!1d-19.9324601!2d-40.6371873!4m5!1s0xb78244b619dd83%3A0x9dda501e8b775c34!2sCasa%20dos%20Espumantes%20-%20Circuito%20Caravaggio%2C%20Santa%20Teresa%20-%20ES!3m2!1d-19.916326899999998!2d-40.6382912!4m5!1s0xb7825aa370640f%3A0x42e64a7b9e28abf8!2sVin%C3%ADcola%20Rassele%20-%20Rua%20Coronel%20Bonfim%20-%20Centro%2C%20Santa%20Teresa%20-%20ES!3m2!1d-19.9326409!2d-40.6047237!5e0!3m2!1spt-BR!2sbr!4v1574883727235!5m2!1spt-BR!2sbr"
-              width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-
-          </div>
-          <!--/.Google Maps-->
+          <h1 class="title1">Cantina Mattiello</h1>
           <hr />
         </div>
-        <!--/.GPS de Como Chegar da Vinicola-->
+          <!--Carousel Wrapper-->
+          <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-2" data-slide-to="1"></li>
+              <li data-target="#carousel-example-2" data-slide-to="2"></li>
+            </ol>
+            <!--/.Indicators-->
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <div class="view">
+                  <img class="d-block w-100"
+                    src="https://initiate.alphacoders.com/images/367/cropped-1920-1080-367402.jpg?5587"
+                    alt="First slide">
+                 
+                </div>
+              </div>
+              <div class="carousel-item">
+                <!--Mask color-->
+                <div class="view">
+                  <img class="d-block w-100"
+                    src="https://revistaadega.uol.com.br/media/como_saber_se_um_vinho_passou_por_madeira.jpg"
+                    alt="Second slide">
+                  
+                </div>
+              </div>
+              <div class="carousel-item">
+                <!--Mask color-->
+                <div class="view">
+                  <img class="d-block w-100" src="https://grandesescolhas.com/wp-content/uploads/2017/07/alcool.jpg"
+                    alt="Third slide">
+                 
+                </div>
+            </div>
+            <!--/.Slides-->
+            <!--Controls-->
+            <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            <!--/.Controls-->
+          </div>
+          <!--/.Carousel Wrapper-->
+          <hr />
+        
         <!--/.Titulo & Slide de Imagens-->
 
         <!--Historia da Vinicola-->
@@ -104,8 +144,26 @@
         </div>
         <!--/.Historia da Vinicola-->
 
+        <!--GPS de Como Chegar da Vinicola-->
+        <div class="jumbotron">
+          <h3 class="title">ROTA</h3>
+          <hr />
+          <!--Google Maps-->
+          <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15015.371075639065!2d-40.68041183186358!3d-19.80426272662442!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3a5ec9c946a41ca3!2sLEDS%20-%20Santa%20Teresa!5e0!3m2!1spt-BR!2sbr!4v1574276990356!5m2!1spt-BR!2sbr"
+              width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </div>
+          <!--/.Google Maps-->
+          <hr />
+        </div>
+        <!--/.GPS de Como Chegar da Vinicola-->
+
+        
+
         <!--Redes Sociais-->
         <div class="jumbotron">
+          <h3 class="title">REDES SOCIAIS</h3>
           <hr />
           <div class="text-center">
             <a href="https://www.instagram.com" class="fa fa-instagram icons fa-2x"></a>
@@ -129,19 +187,20 @@
             <a href="https://www.youtube.com" class="fa fa-youtube-play icons fa-2x"></a>
           </div>
           <hr />
-          <div class="footer-copyright text-center py-3 text-history">© 2019 Vinicolas de Santa Teresa/ES Copyright:
-            <a><i>Todos os direitos reservados. AVIST</i></a>
-          </div>
         </div>
         <!--/.Redes Sociais-->
 
       </div>
+
       <!-- Copyright -->
+      <div class="footer-copyright text-center py-3 text-history">© 2019 Vinicolas de Santa Teresa/ES Copyright:
+        <a><i>Todos os direitos reservados. AVIST</i></a>
+      </div>
       <!-- Copyright -->
 
     </div>
   </div>
-  </div>
+  
 </body>
 
 </html>
