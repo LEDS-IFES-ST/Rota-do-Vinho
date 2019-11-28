@@ -1,12 +1,16 @@
 body{
   font-family: 'Montserrat', sans-serif;
+  background-image:  linear-gradient(rgba(233, 40, 40, 0),rgba(0,0,0,0.0)), url('https://cdn.jornalgrandebahia.com.br/2018/07/Plantação-de-uva-20180727.jpg');
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
-
 
 .navbar{
-  background-color: #000000;
-  
+  background-color: #000000;  
 }
+
   .title{
     text-align: center;
     color: black;
@@ -27,14 +31,11 @@ body{
     font-size: 20px;
   }
 
-  .background{
-    background-image: linear-gradient(rgba(233, 40, 40, 0),rgba(0,0,0,0.0)), url('https://cdn.jornalgrandebahia.com.br/2018/07/Plantação-de-uva-20180727.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  }
+
   .jumbotron{
     background: rgba(264, 264, 264, 0.8);
+    padding-top: 50px;
+    padding-bottom: 5px;
   }
   .map-container{
     overflow:hidden;
@@ -54,55 +55,24 @@ body{
     color: black;
     text-shadow:1px 1px 2px rgba(0,0,0,1);
   }
-  .miniatura {
-    width: 320px;
-    height: 320px;
-    display: inline-block;
-    margin-right: 15px;
-    margin-bottom: 15px;
-    background-size: contain;
-    overflow: hidden;
+
+  .centBanner{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    padding-top: 25px;
   }
-  
-  .miniatura a {
-    text-decoration: none;
-  }
-  .blackbox {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: 0;
-    padding-top: 120px;
-    transition: 1s;
-  }
-  
-  
-  .blackbox:hover {
-    opacity: 0.8;
-    transition: 1s;
-  
-  }
-  
-  .blackbox-text {
+  .centBanner2{
     text-align: center;
-  }
-  
-  .blackbox-text h1 {
-    font-size: 16px;
-    color: #f27609;
-    text-transform: uppercase;
-    margin-top: 0px;
-  }
-  
-  .blackbox-text h2 {
-    text-transform: none;
-    font-weight: 100;
-    margin-top: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 55px;
   }
 
-  @keyframes conteudo {
-    0% {opacity: 0; transform: translate(-20px,0px)}
-    100% {opacity: 1; transform: translate(0px,0px)}
-  } 
+  .footer-copyright{
+    margin-top: 70px;
+  }
 
   
