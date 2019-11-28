@@ -28,7 +28,7 @@ body{
   }
 
   .background{
-    background-image: linear-gradient(rgba(233, 40, 40, 0),rgba(0,0,0,0.0)), url('https://cdn.jornalgrandebahia.com.br/2018/07/Plantação-de-uva-20180727.jpg');
+    background-image: linear-gradient(rgba(233, 40, 40, 0),rgba(0,0,0,0.0)), url('../imgs/background.jpg') ;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
