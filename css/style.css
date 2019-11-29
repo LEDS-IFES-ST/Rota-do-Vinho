@@ -73,4 +73,11 @@ body{
     margin-top: 70px;
   }
 
+  .wrapper {
+    max-width:200px;
+    width:100%;
+  }
   
+  .carousel-item.active {
+    display:block;
+}
