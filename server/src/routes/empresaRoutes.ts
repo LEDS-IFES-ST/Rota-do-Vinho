@@ -8,13 +8,10 @@ class EmpresaRoutes {
     }
 
     config(): void {
-        this.router.get('/', empresaController.fotosCarrosselMain);
+        this.router.get('/', empresaController.showAll);
         this.router.get('/vinicolas/', empresaController.listaVinicolas);
-        this.router.post('/add/', empresaController.addEmpresa);
         this.router.get('/:id', empresaController.infoEmpresa);
-
         this.router.get('/avist/', empresaController.getAvistInfo);
-        this.router.get('/fotos/', empresaController.fotosCarrosselMain);
     }
 
     

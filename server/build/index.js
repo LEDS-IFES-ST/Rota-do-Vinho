@@ -23,10 +23,24 @@ class Server {
     }
     routes() {
         this.app.use('/', indexRoutes_1.default);
-        this.app.use('/api/empresas', empresaRoutes_1.default);
+        this.app.use('/api/vinicolasControl', empresaRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
+            console.log(`
+            ██╗     ███████╗██████╗ ███████╗                  
+            ██║     ██╔════╝██╔══██╗██╔════╝                  
+            ██║     █████╗  ██║  ██║███████╗                  
+            ██║     ██╔══╝  ██║  ██║╚════██║                  
+            ███████╗███████╗██████╔╝███████║                  
+            ╚══════╝╚══════╝╚═════╝ ╚══════╝                  
+                                                  
+    ██╗███████╗███████╗███████╗      ███████╗████████╗
+    ██║██╔════╝██╔════╝██╔════╝      ██╔════╝╚══██╔══╝
+    ██║█████╗  █████╗  ███████╗█████╗███████╗   ██║   
+    ██║██╔══╝  ██╔══╝  ╚════██║╚════╝╚════██║   ██║   
+    ██║██║     ███████╗███████║      ███████║   ██║   
+                           `);
             console.log('Servidor conectado na porta', this.app.get('port'));
         });
     }

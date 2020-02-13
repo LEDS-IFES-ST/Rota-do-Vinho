@@ -39,42 +39,62 @@ class EmpresaController {
      - Retorna array com as inform: [pos]
      1 -- Informacoes basicas da emp.
      2 -- Endereco
-     3 -- Fotos ??
+     3 -- Fotos
      4 -- Contato ??
     */
     infoEmpresa(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const id = req.params.id;
             var str = id.split(',', 2);
+            console.log(str[0] + "<--");
             //Queries
             const infoEmpresa = yield database_1.pool.query('select * from Empresa where codEmpresa = ?', str[0]);
             infoEmpresa[1] = yield database_1.pool.query('select * from Endereco where Empresa_codEmpresa = ?', str[0]);
+            infoEmpresa[2] = yield database_1.pool.query('select * from Imagem where Empresa_codEmpresa = ?', str[0]);
             return res.json(infoEmpresa);
         });
     }
+    // 00000000 ZONA FANTASMA --- nao toque 
     /*
     Buscar 1 imagem de cada Vinicola (img type -> 2/Carrossel)
     Adicionar ao array final p. retornar path e codEmpresa
     
     TODO:// fix for - length query -
-     */
-    fotosCarrosselMain(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            let lenght = yield database_1.pool.query('select count(codEmpresa) from Empresa where TipoEmpresa_codTipoEmpresa = 2');
-            let list;
-            let i = 0;
-            console.log("=> " + lenght + " < - ");
-            try {
-                for (i = 0; i < length; i++) {
-                    list = yield database_1.pool.query('select pathImagem, Empresa_codEmpresa from Imagem where TipoImagem_codTipoImagem = 2');
-                }
+    public async fotosCarrosselMain(req: Request, res: Response): Promise<any> {
+        let length: number;
+        console.log(pool.query('select count(codEmpresa) from Empresa where TipoEmpresa_codTipoEmpresa = 2'));
+
+
+        /* length = await pool.query('select count(codEmpresa) from Empresa where TipoEmpresa_codTipoEmpresa = 2');
+        let list: any[][0];
+        let i = 0;
+        try {
+            for (i = 0; i < length; i++) {
+                //list = await pool.query('select pathImagem, Empresa_codEmpresa from Imagem where TipoImagem_codTipoImagem = 2');
+                console.log("loop working fine")
             }
-            catch (error) {
-                console.log("Please report this error");
-            }
-            return res.json(list);
-        });
+        } catch (error) {
+            console.log("Please report this error")
+        }
+        return res.json(list);
     }
+
+------------------------------------------------------------------------------------------------------------
+    private async getCarrosIndi(id: any): Promise<any>{
+        console.log(id + "id recebido: (getcarro method) ---------------00000000000000000000000000");
+        const catcher = null;
+        try {
+            const catcher = await pool.query('select * from Imagem where Empresa_codEmpresa = ?', id);
+        } catch (error) {
+            console.log("report this error (getCarrorsInidi())");
+            return '-1';
+            
+        }
+        return -3;
+
+    }
+
+        */
     addEmpresa(req, res) {
         console.log(req.body);
         res.json({
