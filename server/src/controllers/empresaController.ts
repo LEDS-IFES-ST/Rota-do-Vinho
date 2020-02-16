@@ -16,6 +16,7 @@ class EmpresaController {
         res.json(vinicolas);
     }
     public async getAvistInfo(req: Request, res: Response): Promise<any> {
+        console.log("blabalbla");
         const avist = await pool.query('select * from Empresa where Empresa.nomeEmpresa = "Avist"');
         return res.json(avist);
     }
@@ -24,28 +25,6 @@ class EmpresaController {
         const empresas = await pool.query('select * from Empresa');
         res.json(empresas);
     }
-
-    /* Funcao p. informações de X Empresa (byId) 
-     - Retorna array com as inform: [pos]
-     1 -- Informacoes basicas da emp.
-     2 -- Endereco
-     3 -- Fotos 
-     4 -- Contato ??
-    */
-    public async infoEmpresa(req: Request, res: Response): Promise<any> {
-        const id = req.params.id;
-        var str = id.split(',', 2);
-        console.log(str[0] + "<--");
-        //Queries
-        const infoEmpresa: any[][0] = await pool.query('select * from Empresa where codEmpresa = ?', str[0]);
-        infoEmpresa[1] = await pool.query('select * from Endereco where Empresa_codEmpresa = ?', str[0]);
-        infoEmpresa[2] = await pool.query('select * from Imagem where Empresa_codEmpresa = ?', str[0]);
-
-        return res.json(infoEmpresa);
-    }
-
-
-
 
     // 00000000 ZONA FANTASMA --- nao toque 
     /* 

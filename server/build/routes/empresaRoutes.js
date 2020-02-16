@@ -8,10 +8,10 @@ class EmpresaRoutes {
         this.config();
     }
     config() {
+        this.router.get('/avist/', empresaController_1.empresaController.getAvistInfo);
         this.router.get('/', empresaController_1.empresaController.showAll);
         this.router.get('/vinicolas/', empresaController_1.empresaController.listaVinicolas);
-        this.router.get('/:id', empresaController_1.empresaController.infoEmpresa);
-        this.router.get('/avist/', empresaController_1.empresaController.getAvistInfo);
+        //this.router.get('/:id', empresaController.infoEmpresa);
     }
 }
 const empresaRoutes = new EmpresaRoutes();

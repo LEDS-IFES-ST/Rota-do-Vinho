@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const empresaRoutes_1 = __importDefault(require("./routes/empresaRoutes"));
+const vinicolasRoutes_1 = __importDefault(require("./routes/vinicolasRoutes"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 class Server {
@@ -23,7 +24,8 @@ class Server {
     }
     routes() {
         this.app.use('/', indexRoutes_1.default);
-        this.app.use('/api/vinicolasControl', empresaRoutes_1.default);
+        this.app.use('/api/vinicolasControl', vinicolasRoutes_1.default);
+        this.app.use('/api/empresaControl', empresaRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

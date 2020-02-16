@@ -25,6 +25,7 @@ class EmpresaController {
     }
     getAvistInfo(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log("blabalbla");
             const avist = yield database_1.pool.query('select * from Empresa where Empresa.nomeEmpresa = "Avist"');
             return res.json(avist);
         });
@@ -33,25 +34,6 @@ class EmpresaController {
         return __awaiter(this, void 0, void 0, function* () {
             const empresas = yield database_1.pool.query('select * from Empresa');
             res.json(empresas);
-        });
-    }
-    /* Funcao p. informações de X Empresa (byId)
-     - Retorna array com as inform: [pos]
-     1 -- Informacoes basicas da emp.
-     2 -- Endereco
-     3 -- Fotos
-     4 -- Contato ??
-    */
-    infoEmpresa(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const id = req.params.id;
-            var str = id.split(',', 2);
-            console.log(str[0] + "<--");
-            //Queries
-            const infoEmpresa = yield database_1.pool.query('select * from Empresa where codEmpresa = ?', str[0]);
-            infoEmpresa[1] = yield database_1.pool.query('select * from Endereco where Empresa_codEmpresa = ?', str[0]);
-            infoEmpresa[2] = yield database_1.pool.query('select * from Imagem where Empresa_codEmpresa = ?', str[0]);
-            return res.json(infoEmpresa);
         });
     }
     // 00000000 ZONA FANTASMA --- nao toque 
