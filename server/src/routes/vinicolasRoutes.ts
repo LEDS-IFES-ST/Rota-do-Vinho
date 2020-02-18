@@ -10,7 +10,7 @@ class VinicolasRoutes {
     config(): void {
         this.router.get('/lista', vinicolaController.listaVinicolas);
         this.router.get('/infoGeral/:id', vinicolaController.infoEmpresa);
-        this.router.get('/fotos', vinicolaController.fotosCarrosselMain);
+        this.router.get('/fotosMain', vinicolaController.fotosCarrosselMain);
     }
 
     

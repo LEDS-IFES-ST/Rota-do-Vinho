@@ -1,0 +1,60 @@
+ 
+     <!--Titulo & Slide de Imagens-->   
+    
+     <div class="container">
+        <div class="jumbotron">
+          <h1 class="title1">CANTINAS</h1>
+          <hr />
+        </div>
+        <!--Carousel Wrapper-->
+        <div id="carousel-with-lb" class="carousel slide carousel-multi-item" data-ride="carousel">
+    
+          <!--Controls-->
+          <div class="controls-top">
+            <a class="btn-floating btn-secondary" href="#carousel-with-lb" data-slide="prev"><i
+                class="fas fa-chevron-left"></i></a>
+            <a class="btn-floating btn-secondary" href="#carousel-with-lb" data-slide="next"><i
+                class="fas fa-chevron-right"></i></a>
+          </div>
+          <!--/.Controls-->
+    
+          <!--Indicators-->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-with-lb" data-slide-to="0" class="active secondary-color"></li>
+            <li data-target="#carousel-with-lb" data-slide-to="1" class="secondary-color"></li>
+            <li data-target="#carousel-with-lb" data-slide-to="2" class="secondary-color"></li>
+          </ol>
+          <!--/.Indicators-->
+    
+          <!--Slides and lightbox-->
+    
+          <div class="carousel-inner mdb-lightbox" role="listbox">
+            <div id="mdb-lightbox-ui"></div>
+            <!--First slide-->
+            <div class="carousel-item active text-center">
+    
+              <figure class="col-md-6 d-md-inline-block">
+                <a href="" data-size="1600x1067">
+                  <img src="https://abrilveja.files.wordpress.com/2019/09/lula-policia-federal-prisao-entrevista-2019-1-16.jpeg.jpg" class="img-fluid">
+                </a>
+              </figure>     
+            </div>
+
+            <div class="carousel-item text-center" *ngFor="let carrosel of carroselList">
+    
+                <figure class="col-md-6 d-md-inline-block">
+                  <a href="" data-size="1600x1067">
+                    <img src={{carrosel.pathImagem}} class="img-fluid">
+                  </a>
+                </figure>     
+              </div>
+            <!--/.First slide-->   
+          </div>
+          <!--/.Slides-->
+    
+        </div>
+        <!--/.Carousel Wrapper-->
+    
+    
+    </div>
+   

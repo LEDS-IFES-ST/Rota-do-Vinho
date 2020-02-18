@@ -1,15 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const vinicolaController_1 = require("../controllers/vinicolaController");
+const enderecoController_1 = require("../controllers/enderecoController");
 class EnderecoRoutes {
     constructor() {
         this.router = express_1.Router();
         this.config();
     }
     config() {
-        this.router.get('/lista', vinicolaController_1.enderecoController.listaEndereco);
-        this.router.get('/infoGeral/:id', vinicolaController_1.enderecoController.infoEmpresa);
+        this.router.get('/:id', enderecoController_1.enderecoController.getEndereco);
     }
 }
 const enderecoRoutes = new EnderecoRoutes();

@@ -9,9 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const database_1 = require("../database");
 class EnderecoController {
     getEndereco(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const id = req.params.id;
+            var str = id.split(',', 2);
+            const endereco = yield database_1.pool.query('select * from Endereco where Empresa_codEmpresa = ?', str[0]);
+            res.json(endereco);
         });
     }
 }
+exports.enderecoController = new EnderecoController();

@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { pool } from '../database';
-import { empresaController } from './empresaController';
 
 class VinicolaController {
 
@@ -10,35 +9,35 @@ class VinicolaController {
         res.json(vinicolas);
     }
 
-    /* Funcao p/ montar pag default com informações de X Vinicola (byId) 
+    /* Funcao p/ montar pag padrao com informações de X Vinicola (byId) 
      - Retorna JSON array com as inform: [pos]
-     1 -- Informacoes basicas da emp.
-     2 -- Endereco
-     3 -- Fotos 
-     4 -- Contato ??
+     0 -- Informacoes basicas da emp.
+     1 -- Endereco
+     2 -- Fotos 
+     3 -- Contato 
+     4 -- Informações ***TODO// 
     */
     public async infoEmpresa(req: Request, res: Response): Promise<any> {
         const id = req.params.id;
         var str = id.split(',', 2);
-        console.log(str[0] + "<--blablalba---");
         //Queries
         const infoEmpresa: any[][0] = await pool.query('select * from Empresa where codEmpresa = ?', str[0]);
         infoEmpresa[1] = await pool.query('select * from Endereco where Empresa_codEmpresa = ?', str[0]);
         infoEmpresa[2] = await pool.query('select * from Imagem where Empresa_codEmpresa = ?', str[0]);
-
+        infoEmpresa[3] = await pool.query('select * from Contato where Empresa_codEmpresa = ?', str[0]);
         return res.json(infoEmpresa);
     }
 
     /* 
-    Buscar 1 imagem de cada Vinicola (img type -> 2/Carrossel)
+    Metodo pra busca de fotos para montagem do carrossel da pag. principal
+    Uma foto de cada vinicola 
     Adicionar ao array final p. retornar path e codEmpresa
-    
+
     TODO:// fix for - length query - 
     */
     public async fotosCarrosselMain(req: Request, res: Response): Promise<any> {
         let length: number;
         //console.log(pool.query('select count(codEmpresa) from Empresa where TipoEmpresa_codTipoEmpresa = 2'));
-
         let list: any[][0];
         let i = 0;
         try {
@@ -50,11 +49,6 @@ class VinicolaController {
         }
         return res.json(list);
     }
-
-
-
-
-
 
 
 }

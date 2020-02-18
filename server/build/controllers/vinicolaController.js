@@ -17,29 +17,31 @@ class VinicolaController {
             res.json(vinicolas);
         });
     }
-    /* Funcao p/ montar pag default com informações de X Vinicola (byId)
+    /* Funcao p/ montar pag padrao com informações de X Vinicola (byId)
      - Retorna JSON array com as inform: [pos]
-     1 -- Informacoes basicas da emp.
-     2 -- Endereco
-     3 -- Fotos
-     4 -- Contato ??
+     0 -- Informacoes basicas da emp.
+     1 -- Endereco
+     2 -- Fotos
+     3 -- Contato
+     4 -- Informações ***TODO//
     */
     infoEmpresa(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const id = req.params.id;
             var str = id.split(',', 2);
-            console.log(str[0] + "<--blablalba---");
             //Queries
             const infoEmpresa = yield database_1.pool.query('select * from Empresa where codEmpresa = ?', str[0]);
             infoEmpresa[1] = yield database_1.pool.query('select * from Endereco where Empresa_codEmpresa = ?', str[0]);
             infoEmpresa[2] = yield database_1.pool.query('select * from Imagem where Empresa_codEmpresa = ?', str[0]);
+            infoEmpresa[3] = yield database_1.pool.query('select * from Contato where Empresa_codEmpresa = ?', str[0]);
             return res.json(infoEmpresa);
         });
     }
     /*
-    Buscar 1 imagem de cada Vinicola (img type -> 2/Carrossel)
+    Metodo pra busca de fotos para montagem do carrossel da pag. principal
+    Uma foto de cada vinicola
     Adicionar ao array final p. retornar path e codEmpresa
-    
+
     TODO:// fix for - length query -
     */
     fotosCarrosselMain(req, res) {

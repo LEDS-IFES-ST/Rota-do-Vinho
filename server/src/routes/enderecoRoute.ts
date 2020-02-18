@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { enderecoController } from '../controllers/vinicolaController';
+import { enderecoController } from '../controllers/enderecoController';
 class EnderecoRoutes {
     public router: Router = Router();
 
@@ -8,8 +8,7 @@ class EnderecoRoutes {
     }
 
     config(): void {
-        this.router.get('/lista', enderecoController.listaEndereco);
-        this.router.get('/infoGeral/:id', enderecoController.infoEmpresa);
+        this.router.get('/:id', enderecoController.getEndereco);
     }
 
     

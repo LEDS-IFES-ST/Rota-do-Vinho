@@ -2,6 +2,7 @@ import express, {Application} from 'express';
 import indexRoutes from './routes/indexRoutes';
 import empresaRoutes from './routes/empresaRoutes'
 import vinicolasRoutes from './routes/vinicolasRoutes';
+import enderecoRoutes from './routes/enderecoRoute';
 import morgan from 'morgan';
 import cors from 'cors';
 
@@ -26,6 +27,7 @@ class Server {
         this.app.use('/', indexRoutes);
         this.app.use('/api/vinicolasControl', vinicolasRoutes);
         this.app.use('/api/empresaControl', empresaRoutes);
+        this.app.use('/api/enderecoControl', enderecoRoutes); 
     }
 
     start(): void{
