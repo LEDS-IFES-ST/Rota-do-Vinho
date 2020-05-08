@@ -108,24 +108,6 @@ COMMENT = 'Informação sobre os telefones e as redes sociais da empresa.';
 
 
 -- -----------------------------------------------------
--- Table `avistdb`.`TelefonePessoa`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `avistdb`.`TelefonePessoa` (
-  `codTelPessoa` INT NULL,
-  `numero` INT NULL,
-  `Pessoa_codPessoa` INT NOT NULL,
-  PRIMARY KEY (`codTelPessoa`, `Pessoa_codPessoa`),
-  INDEX `fk_TelefonePessoa_Pessoa1_idx` (`Pessoa_codPessoa` ASC),
-  CONSTRAINT `fk_TelefonePessoa_Pessoa1`
-    FOREIGN KEY (`Pessoa_codPessoa`)
-    REFERENCES `avistdb`.`Pessoa` (`codPessoa`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-PACK_KEYS = DEFAULT;
-
-
--- -----------------------------------------------------
 -- Table `avistdb`.`Endereco`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `avistdb`.`Endereco` (
