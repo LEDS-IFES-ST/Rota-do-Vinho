@@ -1,7 +1,8 @@
 export default {
     database: {
         host: 'localhost',
-        user: 'root',
+        user: 'phpmyadmin',
+        password: 'phpmyadmin',
         database: 'avistdb'
     }
 }
