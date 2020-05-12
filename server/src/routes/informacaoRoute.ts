@@ -8,7 +8,10 @@ class InformacaoRoutes {
     }
 
     config(): void {
-        this.router.get('/:id', informacaoController.getInformacao);
+        this.router.get('/:id', informacaoController.getInformacaoByEmpresaID);
+        this.router.get('/', informacaoController.listaAll);
+        this.router.post('/addInfo/', informacaoController.create);
+        this.router.delete('/:id', informacaoController.delete);
     }
 
     

@@ -1,10 +1,16 @@
 import express, {Application} from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+
 import indexRoutes from './routes/indexRoutes';
 import empresaRoutes from './routes/empresaRoutes'
 import vinicolasRoutes from './routes/vinicolasRoutes';
 import enderecoRoutes from './routes/enderecoRoute';
-import morgan from 'morgan';
-import cors from 'cors';
+import informacaoRoutes from './routes/informacaoRoute';
+import contatoRoutes from './routes/contatoRoute';
+import imagemRoutes from './routes/imagemRoute';
+import pessoaRoutes from './routes/pessoaRoute';
+
 
 class Server { 
     public app: Application;
@@ -25,9 +31,13 @@ class Server {
 
     routes(): void{
         this.app.use('/', indexRoutes);
-        this.app.use('/api/vinicolasControl', vinicolasRoutes);
+        this.app.use('/api/vinicolaControl', vinicolasRoutes);
         this.app.use('/api/empresaControl', empresaRoutes);
         this.app.use('/api/enderecoControl', enderecoRoutes); 
+        this.app.use('/api/infoControl', informacaoRoutes);
+        this.app.use('/api/imagemControl', imagemRoutes);
+        this.app.use('/api/contatoControl', contatoRoutes);
+        this.app.use('/api/pessoaControl', pessoaRoutes);
     }
 
     start(): void{

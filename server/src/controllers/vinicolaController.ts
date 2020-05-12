@@ -25,30 +25,24 @@ class VinicolaController {
         infoEmpresa[1] = await pool.query('select * from Endereco where Empresa_codEmpresa = ?', str[0]);
         infoEmpresa[2] = await pool.query('select * from Imagem where Empresa_codEmpresa = ?', str[0]);
         infoEmpresa[3] = await pool.query('select * from Contato where Empresa_codEmpresa = ?', str[0]);
+        infoEmpresa[4] = await pool.query('select * from Informacao where Empresa_codEmpresa = ?', str[0]);
+        infoEmpresa[5] = await pool.query('select * from Pessoa where Empresa_codEmpresa = ?', str[0]);
         return res.json(infoEmpresa);
     }
 
-    /* 
-    Metodo pra busca de fotos para montagem do carrossel da pag. principal
-    Uma foto de cada vinicola 
-    Adicionar ao array final p. retornar path e codEmpresa
 
-    TODO:// fix for - length query - 
-    */
-    public async fotosCarrosselMain(req: Request, res: Response): Promise<any> {
-        let length: number;
-        //console.log(pool.query('select count(codEmpresa) from Empresa where TipoEmpresa_codTipoEmpresa = 2'));
-        let list: any[][0];
-        let i = 0;
-        try {
-            for (i = 0; i < 5; i++) {
-                list = await pool.query('select pathImagem, Empresa_codEmpresa from Imagem where TipoImagem_codTipoImagem = 2');
-            }
-        } catch (error) {
-            console.log("Please report this error")
-        }
-        return res.json(list);
+    // deve retornar o msmo do met acima
+    // wtf?? not working
+    public async infoEmpresa2(req: Request, res: Response): Promise<any> {
+        const id = req.params.id;
+        var str = id.split(',', 2);
+        const infoEmpresa = await pool.query('select * from Empresa join Endereco on codEmpresa = Empresa_codEmpresa join Imagem on Endereco.Empresa_codEmpresa = Imagem.Empresa_codEmpresa join Informacao on Imagem.Empresa_codEmpresa = Informacao.Empresa_codEmpresa '
+        , str[0]);
+        return res.json(infoEmpresa)
     }
+
+
+
 
 
 }

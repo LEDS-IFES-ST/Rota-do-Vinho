@@ -15,8 +15,8 @@ class EmpresaController {
         const vinicolas = await pool.query('select * from Empresa where TipoEmpresa_codTipoEmpresa = 2');
         res.json(vinicolas);
     }
+
     public async getAvistInfo(req: Request, res: Response): Promise<any> {
-        console.log("blabalbla");
         const avist = await pool.query('select * from Empresa where Empresa.nomeEmpresa = "Avist"');
         return res.json(avist);
     }
@@ -26,12 +26,15 @@ class EmpresaController {
         res.json(empresas);
     }
 
-    public addEmpresa(req: Request, res: Response) {
-        console.log(req.body);
+    public async addEmpresa(req: Request, res: Response) {
+        await pool.query('insert into Empresa set ? ',[req.body]);
         res.json({
-            text: 'Addedendo empresa: -> ' + req.body.nomeEmpresa + ' <-'
+            text: 'Adicionando empresa: ' + req.body.nomeEmpresa + ' <-',
+            retorno: req.body
         });
     }
+
+
 
 
 
