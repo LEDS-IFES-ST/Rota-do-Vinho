@@ -36,7 +36,7 @@ class InformacaoController {
         });
     }
 
-    public async delete(req: Request, res: Response): Promise<any {
+    public async delete(req: Request, res: Response): Promise<any> {
         const { id } = req.params;
         const info = await pool.query('DELETE FROM Informacao WHERE codInformacao = ?', [id]);
         console.log(info);
