@@ -46,3 +46,6 @@ server/node_modules/
 .vscode/
 
 server/build/
+
+client_side/node_modules/
+client_side/server/
