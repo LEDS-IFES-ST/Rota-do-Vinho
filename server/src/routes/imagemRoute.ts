@@ -10,6 +10,7 @@ class ImagemRoutes {
     config(): void {
         this.router.get('/carrosselMain', imagemController.fotosCarrosselMain);
         this.router.get('/', imagemController.listaAll);
+        this.router.get('/ftvinicola/:id', imagemController.ftosVinicolaByID);
         this.router.post('/addImagem/', imagemController.create);
         this.router.delete('/:id', imagemController.delete);
     }

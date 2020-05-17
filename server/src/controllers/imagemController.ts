@@ -3,8 +3,13 @@ import { pool } from '../database';
 
 
 class ImagemController {
+    /* Tipos imagem
+        1 | Logomarca
+        2 | Carrossel 
+|       3 | Fotos
+     */
 
-   public async listaAll(req: Request, res: Response) {
+    public async listaAll(req: Request, res: Response) {
         const imagem = await pool.query('select * from Imagem');
         res.json(imagem);
     }
@@ -29,7 +34,6 @@ class ImagemController {
         res.json({ message: ' imagem deletada' });
     }
 
-
     /* 
     Metodo pra busca de fotos para montagem do carrossel da pag. principal
     Uma foto de cada vinicola 
@@ -46,9 +50,30 @@ class ImagemController {
                 list = await pool.query('select pathImagem, Empresa_codEmpresa from Imagem where TipoImagem_codTipoImagem = 2');
             }
         } catch (error) {
-            console.log("Please report this error")
+            console.log(error);
+            console.log("Please report this error");
         }
         return res.json(list);
+    }
+
+    /*
+        
+    */
+    public async ftosVinicolaByID(req: Request, res: Response): Promise<any> {
+        const id = req.params.id;
+        var str = id.split(',', 2);
+        let list: any[][0];
+        let i = 0;
+        try {
+            for (i = 0; i < 5; i++) {
+                list = await pool.query('select Empresa_codEmpresa, pathImagem from Imagem where TipoImagem_codTipoImagem <> 1 and Empresa_codEmpresa = ? ', str[0]);
+            }
+        } catch (error) {
+            console.log(error);
+            console.log("Please report this error");
+        }
+        return res.json(list);
+
     }
 
 
