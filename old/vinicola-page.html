@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Padrões e Links da Página-->
+  <meta name="charset" content="utf-8" />
+  <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <!--/.Padrões e Links da Página-->
+
+  <!--Titulo da Guia-->
+  <title>Vinicola LEDS Santa Teresa</title>
+  <link rel="shortcut icon" href="icons/vinho.ico">
+  <!--/.Titulo da Guia-->
+
+  <!--Styles em CSS-->
+  <link href="css/style.css" rel="stylesheet">
+  <!--/.Styles em CSS-->
+
+  <!--Link das Fontes (Font Awesome)-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--/.Link das Fontes (Font Awesome)-->
+</head>
+
+<body>
+
+
+  <!--NavBar-->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: black">
+    <a class="navbar-brand" href="#">
+      <img src="imgs/avistnav.png" height="22" width="105">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+      <ul class="navbar-nav ">
+        <li class="nav-item ">
+          <a class="nav-link" href="index.html"><i class="fa fa-home"></i> HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="rotas.html"><i class="fa fa-map"></i> ROTAS</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="vinicolaAll.html" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-glass"></i>
+            VINICOLAS
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="vinicola-page.html">Cantina Mattiello</a>
+            <a class="dropdown-item" href="#">Cantina Tomazelli</a>
+            <a class="dropdown-item" href="#">Casa dos Espumantes</a>
+            <a class="dropdown-item" href="#">Vinícola Rassele</a>
+            <a class="dropdown-item" href="#">Vinícola Labiata</a>
+            <a class="dropdown-item" href="#">Cantina Romanha</a>
+            <a class="dropdown-item" href="#">Vinícola Tabocas</a>
+            <a class="dropdown-item" href="#">Vinícola Braun</a>
+            <a class="dropdown-item" href="#">Vinícola Zivianni</a>
+          </div>
+        </li>
+        <li>
+          <a class="nav-link" href="contatos.html"><i class="fa fa-phone"></i> CONTATOS</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--/.NavBar-->
+
+
+
+  <!--/.NavBar-->
+
+  <!--Titulo & Slide de Imagens-->
+  <div class="background">
+    <div class="container">
+
+      <div class="jumbotron centBanner2">
+        <img src="imgs/logocantina.png" alt="">
+        <hr />
+      </div>
+
+      <!--Carousel Wrapper-->
+      <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+          <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+          <!--First slide-->
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="imgs/mattiello/3.jpg" alt="First slide">
+          </div>
+          <!--/First slide-->
+          <!--Second slide-->
+          <div class="carousel-item">
+            <img class="d-block w-100" src="imgs/mattiello/1.jpg" alt="Second slide">
+          </div>
+          <!--/Second slide-->
+          <!--Third slide-->
+          <div class="carousel-item">
+            <img class="d-block w-100" src="imgs/mattiello/2.jpg" alt="Third slide">
+          </div>
+          <!--/Third slide-->
+        </div>
+        <!--/.Slides-->
+        <!--Controls-->
+        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
+      </div>
+      <!--/.Carousel Wrapper-->
+
+
+
+      <hr />
+
+      <!--/.Titulo & Slide de Imagens-->
+
+      <!--Historia da Vinicola-->
+      <div class="jumbotron">
+        <hr />
+        <p class="text-history">
+          No dia 24 de julho de 1888 , na Comune di Soave , província de Verona, Itália, nascia Atílio Mattiello , filho
+          de Giovanni Mattiello e Margherita Sitta, vitivinicultores natos cuja vinha passava de gerações a gerações.
+
+          Mal sabia Atílio que o destino de sua família estava em colonizar terras capixabas. Em 6 de fevereiro de 1895
+          com apenas 7 anos de idade chegava a Vitória- ES, logo em seguida tomaram destino para região serrana de Santa
+          Teresa-ES com seus pais, o irmão Luciano, a irmã Caterina e muitas outras famílias imigrantes que atravessaram
+          o atlântico no navio Rosário. Nova terra, novo clima , nova língua , novas plantas, novas culturas… A
+          adaptação de sua família em terras capixabas foi muito difícil e cheio de aventuras.
+
+          Ao chegarem no município encontraram a jabuticaba, uma fruta nativa da mata Atlântica existente na região,
+          onde produziram vinhos para o consumo da família.
+
+          Passou a tradição por gerações, chegando ao seu neto Atilio Mattielo, que fez surgir toda a tradição de seus
+          antepassados, cultivando uvas para a vinificação.
+
+          Em março de 1996, Viviane Mattiello, filha de Atilio Mattielo (neto), inaugurou a Cantina Mattiello, que alem
+          de seus produtos próprios, vinhos, licores, café torrado, sucos e geléias, trabalham com agro turismo,
+          recebendo visitas às parreiras de uvas e proporcionando aos clientes a oportunidade de conhecer o processo de
+          produção dos vinhos e degustação dos produtos ao final do tour.
+
+        </p>
+        <hr />
+      </div>
+      <!--/.Historia da Vinicola-->
+
+      <!--GPS de Como Chegar da Vinicola-->
+      <div class="jumbotron">
+        <h3 class="title">ROTA</h3>
+        <hr />
+        <!--Google Maps-->
+        <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15015.371075639065!2d-40.68041183186358!3d-19.80426272662442!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3a5ec9c946a41ca3!2sLEDS%20-%20Santa%20Teresa!5e0!3m2!1spt-BR!2sbr!4v1574276990356!5m2!1spt-BR!2sbr"
+            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+        <!--/.Google Maps-->
+        <hr />
+      </div>
+      <!--/.GPS de Como Chegar da Vinicola-->
+
+
+
+      <!--Redes Sociais-->
+      <div class="jumbotron">
+        <h3 class="title">REDES SOCIAIS</h3>
+        <hr />
+        <div class="text-center">
+          <a href="https://www.instagram.com" class="fa fa-instagram icons fa-2x"></a>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          <a href="https://www.facebook.com/ledsst/" class="fa fa-facebook-square icons fa-2x"></a>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          <a href="https://www.whatsapp.com" class="fa fa-whatsapp icons fa-2x"></a>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          <a href="https://www.youtube.com" class="fa fa-youtube-play icons fa-2x"></a>
+        </div>
+        <hr />
+      </div>
+      <!--/.Redes Sociais-->
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 text-history">© 2019 Vinicolas de Santa Teresa/ES Copyright:
+      <a><i>Todos os direitos reservados. AVIST</i></a>
+    </div>
+    <!-- Copyright -->
+
+  </div>
+  </div>
+
+</body>
+
+</html>

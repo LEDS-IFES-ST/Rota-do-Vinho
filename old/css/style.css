@@ -1,0 +1,83 @@
+body{
+  font-family: 'Montserrat', sans-serif;
+  background-image:  linear-gradient(rgba(233, 40, 40, 0),rgba(0,0,0,0.0)), url('https://cdn.jornalgrandebahia.com.br/2018/07/Plantação-de-uva-20180727.jpg');
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.navbar{
+  background-color: #000000;  
+}
+
+  .title{
+    text-align: center;
+    color: black;
+   font-weight: bold;
+   margin: auto;
+  }
+
+  .title1{
+    font-size: 70px;
+    text-align: center;
+    color: black;
+   font-weight: bold;
+   padding-top: 45px;
+  }
+  .text-history{
+    text-align: center;
+    color: black;
+    font-size: 20px;
+  }
+  .jumbotron{
+    background: rgba(264, 264, 264, 0.8);
+    padding-top: 50px;
+    padding-bottom: 5px;
+  }
+  .map-container{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+  }
+  .map-container iframe{
+    left:0;
+    top:0;
+    height:100%;
+        width:100%;
+    position:absolute;
+  }
+  .icons{
+    font-size: large;
+    color: black;
+    text-shadow:1px 1px 2px rgba(0,0,0,1);
+  }
+
+  .centBanner{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    padding-top: 25px;
+  }
+  .centBanner2{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 55px;
+  }
+
+  .footer-copyright{
+    margin-top: 70px;
+  }
+
+  .wrapper {
+    max-width:200px;
+    width:100%;
+  }
+  
+  .carousel-item.active {
+    display:block;
+}
